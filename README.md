@@ -5,11 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/objective-bgg.svg?style=flat)](http://cocoadocs.org/docsets/objective-bgg)
 [![Platform](https://img.shields.io/cocoapods/p/objective-bgg.svg?style=flat)](http://cocoadocs.org/docsets/objective-bgg)
 
+## Installation
+
+objective-bgg is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+pod "objective-bgg"
+
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-`LXBoardGameGeek` is created as a singleton (i.e. it doesn't need to be explicitly allocated and instantiated; you directly call `[[LXBoardGameGeek sharedInstance] method]`).
+`LXBoardGameGeek` is created as a singleton (i.e. it doesn't need to be explicitly allocated and instantiated; you directly call `[LXBoardGameGeek method]`).
 
 Quick example that returns all boardgames that matches "Settlers of catan":
 ```objc
@@ -28,28 +36,24 @@ NSArray *options = @[kBGGOptionTypeBoardGame];
 + (void)gameWithID:(int)gameID options:(NSArray *)options completion:(boardGameCompletionBlock)completion;
 ```
 
-###Options
+#####Options
 Every call takes an NSArray with kBGGOptions. These are available right now:
-#####Search:
- - kBGGOptionTypeBoardGame (Return boardgames only)
- - kBGGOptionTypeExpansion (Return boardgameexpansions only)
- - kBGGOptionSearchExact (Match name exactly)
+######Search:
+ - `kBGGOptionTypeBoardGame` (Return boardgames only)
+ - `kBGGOptionTypeExpansion` (Return boardgameexpansions only)
+ - `kBGGOptionSearchExact` (Match name exactly)
 
-#####gameWithID:
+######gameWithID:
  - kBGGOptionShowStats (Also fetch statistics)
 
-###LXBoardGame
+#####LXBoardGame
 LXBoardGame is the primary model returned by most methods. See LXBoardGame.h for all available properties.
 
 ## Requirements
 LXBoardGameGeek is using [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) by [Nick Lockwood](https://github.com/nicklockwood) but it is included as a CocoaPod.
 
-## Installation
-
-objective-bgg is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-pod "objective-bgg"
+##Disclaimer
+I am in no way a obj-c guru or even that experienced with GitHub but i'd love to hear from you if i've done something stupid. Send a PR or shoot me an [email](anton@lyxit.se).
 
 ## License
 
