@@ -2,6 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LXBoardGameGeek', :exclusive => true do
   pod "LXBoardGameGeek", :path => "../"
+  pod "XMLDictionary", '~> 1.4'
 end
 
 target 'Tests', :exclusive => true do

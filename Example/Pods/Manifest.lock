@@ -1,0 +1,24 @@
+PODS:
+  - Expecta (0.3.1)
+  - LXBoardGameGeek (0.1.0):
+    - XMLDictionary (~> 1.4)
+  - Specta (0.2.1)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - Expecta
+  - LXBoardGameGeek (from `../`)
+  - Specta (~> 0.2.1)
+  - XMLDictionary (~> 1.4)
+
+EXTERNAL SOURCES:
+  LXBoardGameGeek:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
+  LXBoardGameGeek: 4940bc7644e01fae5abbeb6ca81925867a3b3a3e
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  XMLDictionary: 735e81b9a043e220b0d24e9d4f16719606f2e0fc
+
+COCOAPODS: 0.35.0

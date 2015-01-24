@@ -1,13 +1,13 @@
 //
 //  LXViewController.h
-//  LXBoardGameGeek
+//  objective-bgg
 //
-//  Created by = on 01/24/2015.
+//  Created by = on 01/23/2015.
 //  Copyright (c) 2014 =. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface LXViewController : UIViewController
+@interface LXViewController : UITableViewController
 
 @end
