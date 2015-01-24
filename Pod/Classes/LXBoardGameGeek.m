@@ -61,7 +61,7 @@
 #pragma mark - Private methods
 
 - (void)gameWithID:(int)gameID options:(NSArray *)options completion:(boardGameCompletionBlock)completion {
-    NSString *endPoint = [self endPointWithString:[NSString stringWithFormat:@"%d", gameID] type:EndPointSingleGame options:options];
+    NSString *endPoint = [self endPointWithString:[NSString stringWithFormat:@"%d", gameID] type:EndPointThing options:options];
     [self fetchFrom:endPoint completion:^void (NSDictionary *gameData, NSError *error) {
         LXBoardGame *game;
         if (!error) {
@@ -76,7 +76,7 @@
 }
 
 - (void)gamesFromString:(NSString *)gameIDString options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
-    NSString *endPoint = [self endPointWithString:[NSString stringWithFormat:@"%@", gameIDString] type:EndPointSingleGame options:options];
+    NSString *endPoint = [self endPointWithString:[NSString stringWithFormat:@"%@", gameIDString] type:EndPointThing options:options];
     [self fetchFrom:endPoint completion:^void (NSDictionary *gameData, NSError *error) {
         NSMutableArray *games = [NSMutableArray new];
         if (!error) {
@@ -139,7 +139,7 @@
                 realEndPoint = [realEndPoint stringByAppendingString:kAPIExactKey];
             }
             break;
-        case EndPointSingleGame:
+        case EndPointThing:
             realEndPoint = [NSString stringWithFormat:@"%@%@%@%@", kBoardGameGeekAPIURL, kAPIThingKey, kAPIIdKey, endpoint];
             
             if ([options containsObject:kBGGOptionShowStats]) {
@@ -181,6 +181,13 @@
     });
 }
 
+/**
+ *  Maps data from NSDictionaries to LXBoardGame object
+ *
+ *  @param data NSDictionary with boardgame data
+ *
+ *  @return LXBoardGame object
+ */
 - (LXBoardGame *)gameFromData:(NSDictionary *)data {
     LXBoardGame *game = [LXBoardGame new];
 
@@ -246,6 +253,13 @@
     return game;
 }
 
+/**
+ *  Since search only returns a basic amount of info as default we want to only map the relevant properties as well
+ *
+ *  @param data Data to map the relevant properties to a LXBoardGame object
+ *
+ *  @return LXBoardGame object
+ */
 - (LXBoardGame *)smallGameFromData:(NSDictionary *)data {
     LXBoardGame *game = [LXBoardGame new];
     

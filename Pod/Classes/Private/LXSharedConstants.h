@@ -76,7 +76,7 @@ static NSString * const kBoardGameVideoKey = @"video";
 #pragma mark - Other
 typedef NS_ENUM(int, EndPointType) {
     EndPointSearch,
-    EndPointSingleGame
+    EndPointThing
 };
 
 @interface LXSharedConstants : NSObject

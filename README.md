@@ -1,16 +1,16 @@
-# objective-bgg
+# LXBoardGameGeek
 
-[![CI Status](http://img.shields.io/travis/=/objective-bgg.svg?style=flat)](https://travis-ci.org/=/objective-bgg)
-[![Version](https://img.shields.io/cocoapods/v/objective-bgg.svg?style=flat)](http://cocoadocs.org/docsets/objective-bgg)
-[![License](https://img.shields.io/cocoapods/l/objective-bgg.svg?style=flat)](http://cocoadocs.org/docsets/objective-bgg)
-[![Platform](https://img.shields.io/cocoapods/p/objective-bgg.svg?style=flat)](http://cocoadocs.org/docsets/objective-bgg)
+[![CI Status](http://img.shields.io/travis/=/LXBoardGameGeek.svg?style=flat)](https://travis-ci.org/=/LXBoardGameGeek)
+[![Version](https://img.shields.io/cocoapods/v/LXBoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/LXBoardGameGeek)
+[![License](https://img.shields.io/cocoapods/l/LXBoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/LXBoardGameGeek)
+[![Platform](https://img.shields.io/cocoapods/p/LXBoardGameGeek.svg?style=flat)](http://cocoadocs.org/docsets/LXBoardGameGeek)
 
 ## Installation
 
-objective-bgg is available through [CocoaPods](http://cocoapods.org). To install
+LXBoardGameGeek is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-pod "objective-bgg"
+pod "LXBoardGameGeek"
 
 
 ## Usage
@@ -59,4 +59,4 @@ I am in no way a obj-c guru or even that experienced with GitHub but i'd love to
 
 ## License
 
-objective-bgg is available under the MIT license. See the LICENSE file for more info.
+LXBoardGameGeek is available under the MIT license. See the LICENSE file for more info.
