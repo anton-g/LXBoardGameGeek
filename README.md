@@ -7,10 +7,10 @@
 
 ## Installation
 
-~~LXBoardGameGeek is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+~~LXBoardGameGeek is available through [CocoaPods](http://cocoapods.org). To install~~
+~~it, simply add the following line to your Podfile:~~
 
-pod "LXBoardGameGeek"~~
+~~pod "LXBoardGameGeek"~~
 Soon<sup>TM</sup>
 
 
