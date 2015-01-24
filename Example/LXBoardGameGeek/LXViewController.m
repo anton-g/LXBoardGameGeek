@@ -21,10 +21,15 @@
 {
     [super viewDidLoad];    
 	// Do any additional setup after loading the view, typically from a nib.
-    NSArray *options = @[kBGGOptionTypeBoardGame];
+    /*NSArray *options = @[kBGGOptionTypeBoardGame];
     
     [LXBoardGameGeek search:@"Settlers of Catan" options:options completion:^(NSArray *games, NSError *error) {
         self.games = games;
+        [self.tableView reloadData];
+    }];*/
+    
+    [LXBoardGameGeek gamesFromString:@"15, 273" options:nil completion:^(NSArray *boardGames, NSError *error) {
+        self.games = boardGames;
         [self.tableView reloadData];
     }];
 }

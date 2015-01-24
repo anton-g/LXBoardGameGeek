@@ -32,8 +32,10 @@ NSArray *options = @[kBGGOptionTypeBoardGame];
 
 ###Available endpoints:
 ```objc
-+ (void)search:(NSString *)name options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
 + (void)gameWithID:(int)gameID options:(NSArray *)options completion:(boardGameCompletionBlock)completion;
++ (void)search:(NSString *)name options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
++ (void)gamesFromArray:(NSArray *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
++ (void)gamesFromString:(NSString *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
 ```
 
 #####Options
@@ -50,7 +52,7 @@ Every call takes an NSArray with kBGGOptions. These are available right now:
 LXBoardGame is the primary model returned by most methods. See LXBoardGame.h for all available properties.
 
 ## Requirements
-LXBoardGameGeek is using [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) by [Nick Lockwood](https://github.com/nicklockwood) but it is included as a CocoaPod.
+LXBoardGameGeek is using [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) by [Nick Lockwood](https://github.com/nicklockwood) which is included as a CocoaPod.
 
 ##Disclaimer
 I am in no way a obj-c guru or even that experienced with GitHub but i'd love to hear from you if i've done something stupid. Send a PR or shoot me an [email](anton@lyxit.se).

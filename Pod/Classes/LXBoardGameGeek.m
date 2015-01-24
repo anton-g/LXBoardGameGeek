@@ -50,6 +50,14 @@
     [[self sharedInstance] search:name options:options completion:completion];
 }
 
++ (void)gamesFromString:(NSString *)gameIDString options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
+    [[self sharedInstance] gamesFromString:gameIDString options:options completion:completion];
+}
+
++ (void)gamesFromArray:(NSArray *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
+    [[self sharedInstance] gamesFromArray:gameIDs options:options completion:completion];
+}
+
 #pragma mark - Private methods
 
 - (void)gameWithID:(int)gameID options:(NSArray *)options completion:(boardGameCompletionBlock)completion {
@@ -65,6 +73,28 @@
             completion(game, error);
         });
     }];
+}
+
+- (void)gamesFromString:(NSString *)gameIDString options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
+    NSString *endPoint = [self endPointWithString:[NSString stringWithFormat:@"%@", gameIDString] type:EndPointSingleGame options:options];
+    [self fetchFrom:endPoint completion:^void (NSDictionary *gameData, NSError *error) {
+        NSMutableArray *games = [NSMutableArray new];
+        if (!error) {
+            for (NSDictionary *singleGameData in gameData[kBoardGameItemKey]) {
+                [games addObject:[self gameFromData:singleGameData]];
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(games, error);
+        });
+    }];
+}
+
+- (void)gamesFromArray:(NSArray *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
+    NSString *gameIDString = [gameIDs componentsJoinedByString:@","];
+    
+    [self gamesFromString:gameIDString options:options completion:completion];
 }
 
 - (void)search:(NSString *)name options:(NSArray *)options completion:(boardGamesCompletionBlock)completion {
@@ -110,7 +140,7 @@
             }
             break;
         case EndPointSingleGame:
-            realEndPoint = [NSString stringWithFormat:@"%@%@%@%d", kBoardGameGeekAPIURL, kAPIThingKey, kAPIIdKey, [endpoint intValue]];
+            realEndPoint = [NSString stringWithFormat:@"%@%@%@%@", kBoardGameGeekAPIURL, kAPIThingKey, kAPIIdKey, endpoint];
             
             if ([options containsObject:kBGGOptionShowStats]) {
                 realEndPoint = [realEndPoint stringByAppendingString:kAPIStatsKey];

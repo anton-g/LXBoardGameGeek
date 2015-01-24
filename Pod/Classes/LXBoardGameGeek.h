@@ -37,6 +37,7 @@ typedef void (^boardGameCompletionBlock)(LXBoardGame *boardGame, NSError *error)
  */
 + (void)gameWithID:(int)gameID options:(NSArray *)options completion:(boardGameCompletionBlock)completion;
 //- (LXBoardGameExpansion *)expansionWithID:(NSInteger *)expansionID;
-- (NSArray *)gamesWithIDs:(NSArray *)gameIDs;
++ (void)gamesFromArray:(NSArray *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
++ (void)gamesFromString:(NSString *)gameIDs options:(NSArray *)options completion:(boardGamesCompletionBlock)completion;
 
 @end
