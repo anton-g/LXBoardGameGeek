@@ -16,7 +16,7 @@ Soon<sup>TM</sup>
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+~~To run the example project, clone the repo, and run `pod install` from the Example directory first.~~
 
 `LXBoardGameGeek` is created as a singleton (i.e. it doesn't need to be explicitly allocated and instantiated; you directly call `[LXBoardGameGeek method]`).
 
@@ -50,7 +50,7 @@ Every call takes an NSArray with kBGGOptions. These are available right now:
  - kBGGOptionShowStats (Also fetch statistics)
 
 #####LXBoardGame
-LXBoardGame is the primary model returned by most methods. See LXBoardGame.h for all available properties.
+LXBoardGame is the primary model returned by most methods. See `LXBoardGame.h` for all available properties.
 
 ## Requirements
 LXBoardGameGeek is using [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) by [Nick Lockwood](https://github.com/nicklockwood) which is included as a CocoaPod.
