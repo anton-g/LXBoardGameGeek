@@ -10,7 +10,7 @@
 ~~LXBoardGameGeek is available through [CocoaPods](http://cocoapods.org). To install~~
 ~~it, simply add the following line to your Podfile:~~
 
-~~pod "LXBoardGameGeek"~~
+~~pod "LXBoardGameGeek"~~  
 Soon<sup>TM</sup>
 
 
@@ -55,8 +55,8 @@ LXBoardGame is the primary model returned by most methods. See `LXBoardGame.h` f
 ## Requirements
 LXBoardGameGeek is using [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) by [Nick Lockwood](https://github.com/nicklockwood) which is included as a CocoaPod.
 
-##Disclaimer
-I am in no way a obj-c guru or even that experienced with GitHub but i'd love to hear from you if i've done something stupid. Send a PR or shoot me an [email](anton@lyxit.se).
+## PR
+I would love to receive feedback on this project. Send a PR or shoot me an [email](anton@lyxit.se).
 
 ## License
 
